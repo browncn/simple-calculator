@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" style="height: 100%;">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>calc</title>
+    <meta name="theme-color" content="rgb(250,103,39)">
+    <meta name="description" content="simple calculator. that's all">
+    <link rel="icon" type="image/png" sizes="2000x2000" href="assets/img/calc.png">
+    <link rel="icon" type="image/png" sizes="2000x2000" href="assets/img/calc.png">
+    <link rel="icon" type="image/png" sizes="2000x2000" href="assets/img/calc.png">
+    <link rel="icon" type="image/png" sizes="2000x2000" href="assets/img/calc.png">
+    <link rel="icon" type="image/png" sizes="2000x2000" href="assets/img/calc.png">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body style="height: 100%;width: 100%;background: rgb(237,241,245);">
+    <div class="container" style="height: 25%;">
+        <div class="row" style="height: 100%;">
+            <div class="col-md-12" style="height: 40%;font-weight: bold;font-size: 30px;text-align: right;">
+                <div class="float-start btn-group btn-group-toggle" data-bs-toggle="buttons"><label class="form-label btn btn-secondary active" style="background: var(--bs-gray-700);" onclick="d_toggle()">dark&nbsp;<input type="radio" name="options" checked=""></label><label class="form-label btn btn-secondary" style="background: var(--bs-gray-300);color: var(--bs-gray-700);" onclick="l_toggle()">light<input type="radio" name="options" checked=""></label></div><span id="formulae">0</span>
+            </div>
+            <div class="col-md-12 mt-auto" style="height: 60%;font-weight: bold;font-size: 50px;text-align: right;"><span id="result" style="height: 100%;">0</span></div>
+        </div>
+    </div>
+    <div class="container" style="height: 15%;">
+        <div class="row" style="height: 100%;">
+            <div class="col-9 col-md-9">
+                <div class="row" style="height: 100%;">
+                    <div class="col-4 col-md-4" style="margin: 0;box-shadow: 1px 1px 4px 0px;transform: perspective(0px);"><span class="text-center d-block" style="margin: 0;text-align: center;height: 100%;font-size: 50px;font-weight: bold;"></span></div>
+                    <div class="col-4 col-md-4" id="nce" style="margin: 0;box-shadow: 1px 1px 3px 0px;transform: perspective(0px);" onclick="ch(&#39;nce&#39;)"><span class="text-center d-block" style="margin: 0;text-align: center;height: 100%;font-size: 50px;font-weight: bold;" onclick="valget(&#39;ce&#39;)">ce</span></div>
+                    <div class="col-4 col-md-4" id="nc" style="margin: 0;box-shadow: 1px 1px 4px 0px;transform: perspective(0px);" onclick="ch(&#39;nc&#39;)"><span class="text-center d-block" style="margin: 0;text-align: center;height: 100%;font-size: 50px;font-weight: bold;" onclick="valget(&#39;c&#39;)">c</span></div>
+                </div>
+            </div>
+            <div class="col-3 col-md-3" id="ndivide" style="box-shadow: 1px 1px 3px 0px;" onclick="ch(&#39;ndivide&#39;)"><span class="text-center d-block" style="margin: 0;text-align: center;height: 100%;font-size: 50px;font-weight: bold;" onclick="valget(&#39;/&#39;)">/</span></div>
+        </div>
+    </div>
+    <div class="container" style="height: 15%;">
+        <div class="row" style="height: 100%;">
+            <div class="col-9 col-md-9">
+                <div class="row" style="height: 100%;">
+                    <div class="col-4 col-md-4" id="n7" style="margin: 0;box-shadow: 1px 1px 3px 0px;transform: perspective(0px);" onclick="ch(&#39;n7&#39;)"><span class="text-center d-block" style="margin: 0;text-align: center;height: 100%;font-size: 50px;font-weight: bold;" onclick="valget(7)">7</span></div>
+                    <div class="col-4 col-md-4" id="n8" style="margin: 0;box-shadow: 1px 1px 3px 0px;transform: perspective(0px);" onclick="ch(&#39;n8&#39;)"><span class="text-center d-block" style="margin: 0;text-align: center;height: 100%;font-size: 50px;font-weight: bold;" onclick="valget(8)">8</span></div>
+                    <div class="col-4 col-md-4" id="n9" style="margin: 0;box-shadow: 1px 1px 3px 0px;transform: perspective(0px);" onclick="ch(&#39;n9&#39;)"><span class="text-center d-block" style="margin: 0;text-align: center;height: 100%;font-size: 50px;font-weight: bold;" onclick="valget(9)">9</span></div>
+                </div>
+            </div>
+            <div class="col-3 col-md-3" id="ntimes" style="box-shadow: 1px 1px 3px 0px;" onclick="ch(&#39;ntimes&#39;)"><span class="text-center d-block" style="margin: 0;text-align: center;height: 100%;font-size: 50px;font-weight: bold;" onclick="valget(&#39;*&#39;)">X</span></div>
+        </div>
+    </div>
+    <div class="container" style="height: 15%;">
+        <div class="row" style="height: 100%;">
+            <div class="col-9 col-md-9">
+                <div class="row" style="height: 100%;">
+                    <div class="col-4 col-md-4" id="n4" style="margin: 0;box-shadow: 1px 1px 3px 0px;transform: perspective(0px);" onclick="ch(&#39;n4&#39;)"><span class="text-center d-block" style="margin: 0;text-align: center;height: 100%;font-size: 50px;font-weight: bold;" onclick="valget(4)">4</span></div>
+                    <div class="col-4 col-md-4" id="n5" style="margin: 0;box-shadow: 1px 1px 3px 0px;transform: perspective(0px);" onclick="ch(&#39;n5&#39;)"><span class="text-center d-block" style="margin: 0;text-align: center;height: 100%;font-size: 50px;font-weight: bold;" onclick="valget(5)">5</span></div>
+                    <div class="col-4 col-md-4" id="n6" style="margin: 0;box-shadow: 1px 1px 3px 0px;transform: perspective(0px);" onclick="ch(&#39;n6&#39;)"><span class="text-center d-block" style="margin: 0;text-align: center;height: 100%;font-size: 50px;font-weight: bold;" onclick="valget(6)">6</span></div>
+                </div>
+            </div>
+            <div class="col-3 col-md-3" id="nminus" style="box-shadow: 1px 1px 3px 0px;" onclick="ch(&#39;nminus&#39;)"><span class="text-center d-block" style="margin: 0;text-align: center;height: 100%;font-size: 50px;font-weight: bold;" onclick="valget(&#39;-&#39;)">-</span></div>
+        </div>
+    </div>
+    <div class="container" style="height: 15%;">
+        <div class="row" style="height: 100%;">
+            <div class="col-9 col-md-9">
+                <div class="row" style="height: 100%;">
+                    <div class="col-4 col-md-4" id="n1" style="margin: 0;box-shadow: 1px 1px 3px 0px;transform: perspective(0px);" onclick="ch(&#39;n1&#39;)"><span class="text-center d-block" style="margin: 0;text-align: center;height: 100%;font-size: 50px;font-weight: bold;" onclick="valget(1)">1</span></div>
+                    <div class="col-4 col-md-4" id="n2" style="margin: 0;box-shadow: 1px 1px 3px 0px;transform: perspective(0px);" onclick="ch(&#39;n2&#39;)"><span class="text-center d-block" style="margin: 0;text-align: center;height: 100%;font-size: 50px;font-weight: bold;" onclick="valget(2)">2</span></div>
+                    <div class="col-4 col-md-4" id="n3" style="margin: 0;box-shadow: 1px 1px 3px 0px;transform: perspective(0px);" onclick="ch(&#39;n3&#39;)"><span class="text-center d-block" style="margin: 0;text-align: center;height: 100%;font-size: 50px;font-weight: bold;" onclick="valget(3)">3</span></div>
+                </div>
+            </div>
+            <div class="col-3 col-md-3" id="nplus" style="box-shadow: 1px 1px 3px 0px;" onclick="ch(&#39;nplus&#39;)"><span class="text-center d-block" style="margin: 0;text-align: center;height: 100%;font-size: 50px;font-weight: bold;" onclick="valget(&#39;+&#39;)">+</span></div>
+        </div>
+    </div>
+    <div class="container" style="height: 15%;">
+        <div class="row" style="height: 100%;">
+            <div class="col-9 col-md-9">
+                <div class="row" style="height: 100%;">
+                    <div class="col-4 col-md-4" id="nplusminus" style="margin: 0;box-shadow: 1px 1px 3px 0px;transform: perspective(0px);" onclick="ch(&#39;nplusminus&#39;)"><span class="text-nowrap text-lowercase text-center d-block" style="margin: 0;text-align: center;height: 100%;font-size: 50px;font-weight: bold;">+/-</span></div>
+                    <div class="col-4 col-md-4" id="n0" style="margin: 0;box-shadow: 1px 1px 3px 0px;transform: perspective(0px);" onclick="ch(&#39;n0&#39;)"><span class="text-center d-block" style="margin: 0;text-align: center;height: 100%;font-size: 50px;font-weight: bold;" onclick="valget(0)">0</span></div>
+                    <div class="col-4 col-md-4" id="ndot" style="margin: 0;box-shadow: 1px 1px 3px 0px;transform: perspective(0px);" onclick="ch(&#39;ndot&#39;)"><span class="text-center d-block" style="margin: 0;text-align: center;height: 100%;font-size: 50px;font-weight: bold;" onclick="valget(&#39;.&#39;)">.</span></div>
+                </div>
+            </div>
+            <div class="col-3 col-md-3" id="nequals" style="box-shadow: 1px 1px 3px 0px;" onclick="ch(&#39;nequals&#39;)"><span class="text-center d-block" style="margin: 0;text-align: center;height: 100%;font-size: 50px;font-weight: bold;" onclick="valget(&#39;=&#39;)">=</span></div>
+        </div>
+    </div>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/calc.js"></script>
+    <script src="assets/js/sw.js"></script>
+</body>
+
+</html>

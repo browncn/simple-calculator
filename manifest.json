@@ -1,0 +1,1 @@
+{"short_name":"calc","name":"simple calculator","icons":[{"src":"/assets/img/calc.png","type":"image/png","sizes":"2000x2000","purpose":"any maskable"},{"src":"/assets/img/calc.png","type":"image/png","sizes":"2000x2000","purpose":"any maskable"}],"start_url":"index.html","background_color":"rgb(218,189,38)","theme_color":"rgb(250,103,39)","display":"fullscreen"}
